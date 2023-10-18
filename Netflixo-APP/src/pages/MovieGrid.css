@@ -1,0 +1,50 @@
+.container .title{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+.title .query-text{
+    color: #D7171E;
+}
+.movies-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    row-gap: 4rem;
+    padding: 2rem;
+}
+.movies-container div{
+    color: white;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 1rem;
+}
+.movies-container div img{
+    max-width: 100%;
+}
+.movies-container div img,
+.movies-container div p,
+.movies-container div h1{
+    margin-bottom: 1rem;
+}
+.movies-container div svg{
+    color: #D7171E;
+}
+.movies-container div a{
+    background-color: #D7171E;
+    border: 2px solid #D7171E;
+    border-radius: 4px;
+    color: black;
+    padding: 1rem 0.5rem;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+.movies-container div a:hover{
+    background-color: #121212;
+    transition: 1s;
+    color: #D7171E;
+}
