@@ -5,9 +5,9 @@ import {BsFillFilePlayFill} from "react-icons/bs";
 const Navbar = () =>{
     return(
         <nav id="navbar">
-          <h2>
-            <Link to="/"><BsFillFilePlayFill/> Netflixo</Link>
-          </h2>
+          <h1>
+            <Link to="/"><BsFillFilePlayFill/> netflixo</Link>
+          </h1>
           <form >
             <input type="text" placeholder="Qual filme deseja?"/>
             <button type="submit">
