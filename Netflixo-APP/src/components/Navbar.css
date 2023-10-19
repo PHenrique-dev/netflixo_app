@@ -7,7 +7,7 @@
 }
 #navbar h1{
     font-size: 3rem;
-    margin-left: 41.5%;
+    margin-left: 8%;
 }
 #navbar h1 a{
     display: flex;
@@ -21,8 +21,10 @@
 }
 #navbar input{
     padding: 0rem 1.7rem;
-    border-radius: 4px;
-    border: none;
+    border-radius: 4px;;
+    background-color: #121212;
+    color: #D7171E;
+    border: 2px solid #D7171E;
 }
 #navbar form button{
     background-color: #D7171E;
@@ -39,6 +41,21 @@
     background-color: #121212;
     transition: 1s;
     color: #D7171E;
+}
+.barras{
+    font-size: 2rem;
+    margin-left: 55px;
+    color: #D7171E;
+}
+.but{
+    background-color: transparent;
+}
+.menu.active{
+    opacity: 1;
+    visibility: visible;
+}
+.menu{
+    opacity: 0;
 }
 @media (max-width: 992px){
     #navbar h1{

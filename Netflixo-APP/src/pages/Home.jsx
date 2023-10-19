@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 import "./MovieGrid.css"
-import { Link } from "react-router-dom";
 const moviesURL = import.meta.env.VITE_API
 const apiKey = import.meta.env.VITE_API_KEY
-
+import './MovieGrid.css';
 const Home = () =>{
     const [topMovies, setTopMovies] = useState([])
     const getTopRatedMovies = async (url) => {
