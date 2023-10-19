@@ -6,7 +6,7 @@ import {
   BsHourglassSplit,
   BsFillFileEarmarkTextFill,
 } from "react-icons/bs";
-
+import { AiFillCalendar } from 'react-icons/ai';
 import MovieCard from "../components/MovieCard";
 
 import "./Movie.css";
@@ -66,6 +66,9 @@ const Movie = () => {
               <BsFillFileEarmarkTextFill /> Descrição:
             </h3>
             <p>{movie.overview}</p>
+          </div>
+          <div className="data">
+            <h3><AiFillCalendar/> Data de lançamento: {movie.release_date}</h3>
           </div>
           <Link to="/">
           <button>Voltar</button>

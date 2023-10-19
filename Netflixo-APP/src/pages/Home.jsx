@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 import "./MovieGrid.css"
+import { Link } from "react-router-dom";
 const moviesURL = import.meta.env.VITE_API
 const apiKey = import.meta.env.VITE_API_KEY
 
@@ -16,6 +17,7 @@ const Home = () =>{
         getTopRatedMovies(topRatedURL)
     }, [])
     return(
+        
         <div className="container">
             <h2 className="title">Melhores Filmes:</h2>
             <div className="movies-container">

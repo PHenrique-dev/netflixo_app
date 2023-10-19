@@ -24,6 +24,11 @@
 }
 .movies-container div img{
     max-width: 100%;
+    transition: all 0.5s;
+
+}
+.movies-container div img:hover{
+    transform: scale(0.9);
 }
 .movies-container div img,
 .movies-container div p,
