@@ -20,8 +20,22 @@ function Navbar() {
     console.log(isActive)
   };
   return (
-    <nav id="navbar" >
-      <button className="but"><AiOutlineMenu className="barras" onClick={onClick}/></button>
+      <>
+    <nav id="navbar">
+        <button className="but"><AiOutlineMenu className="barras" onClick={onClick} /></button>
+        <h1>
+          <Link to="/"><BsFillFilePlayFill />NETFLIXO</Link>
+        </h1>
+        <form onSubmit={handleSubmit}>
+          <input type="text"
+            placeholder="Qual filme deseja?"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search} />
+          <button type="submit">
+            <BiSearchAlt2 />
+          </button>
+        </form>
+      </nav>
       <nav ref={dropDownRef} className={`menu ${isActive ? "active" : "inactive"}`}>
       <ul>
         <li><a href="">Ação</a></li>
@@ -31,20 +45,8 @@ function Navbar() {
         <li><a href="">Drama</a></li>
         <li><a href="">Ficção</a></li>
       </ul>
-      </nav>
-      <h1>
-        <Link to="/"><BsFillFilePlayFill />NETFLIXO</Link>
-      </h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text"
-          placeholder="Qual filme deseja?"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search} />
-        <button type="submit">
-          <BiSearchAlt2 />
-        </button>
-      </form>
     </nav>
+      </>
   );
 }
 export default Navbar
