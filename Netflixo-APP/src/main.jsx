@@ -6,7 +6,7 @@ import './index.css'
 import Home from './pages/Home.jsx';
 import Movie from './pages/Movie.jsx';
 import Search from './pages/Search.jsx';
-import Action from './filtros/Action.jsx';
+import Action from "./Filtros/Action.jsx";
 import Comedy from './filtros/Comedy.jsx';
 import Drama from './filtros/Drama.jsx';
 import Fiction from './filtros/Fiction.jsx';

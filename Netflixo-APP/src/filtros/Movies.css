@@ -1,0 +1,54 @@
+.poster h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.movie-posters{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    row-gap: 4rem;
+    padding: 2rem;
+}
+.movie-posters div{
+    color: white;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 1rem;
+}
+.movie-posters div img{
+    max-width: 100%;
+    transition: all 0.5s;
+
+}
+.movie-posters div img:hover{
+    transform: scale(0.9);
+}
+.movie-posters div img,
+.movie-posters div p,
+.movie-posters div h1{
+    margin-bottom: 1rem;
+}
+.movie-posters div svg{
+    color: #D7171E;
+}
+.movie-posters div a{
+    background-color: #D7171E;
+    border: 2px solid #D7171E;
+    border-radius: 4px;
+    color: black;
+    padding: 1rem 0.5rem;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+.movie-posters div a:hover{
+    background-color: #121212;
+    transition: 1s;
+    color: #D7171E;
+}

@@ -1,29 +1,49 @@
-import { useState, useEffect } from "react";
-import MovieCard from "../components/MovieCard";
-import "../pages/MovieGrid.css"
-const moviesURL = import.meta.env.VITE_API
-const apiKey = import.meta.env.VITE_API_KEY
-import '../pages/MovieGrid.css';
-const Drama = () =>{
-    const [topMovies, setTopMovies] = useState([])
-    const getTopRatedMovies = async (url) => {
-        const res = await fetch(url)
-        const data = await res.json()
-        setTopMovies(data.results)
-    };
-    useEffect(() =>{
-        const topRatedURL = `${moviesURL}top_rated?${apiKey}`
-        getTopRatedMovies(topRatedURL)
-    }, [])
-    return(
-        
-        <div className="container">
-            <h2 className="title">Drama:</h2>
-            <div className="movies-container">
-            {topMovies.length === 0 && <p>Carregando...</p>}
-            {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie}/>)}
-            </div>
-        </div>
-    )
+import React, { useEffect, useState } from "react";
+import './Movies.css'
+
+const Adventure = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    function fetchMoviesByGenres() {
+      const apiKey = 'db97faa4d80f90ffe83589ef95873814';
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${apiKey}`
+        }
+      };
+
+      return fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=db97faa4d80f90ffe83589ef95873814&language=en', options)
+        .then(response => response.json())
+        .then(genresResponse => {
+          const genreIds = genresResponse.genres.map(genre => genre.id);
+
+          return fetch("https://api.themoviedb.org/3/discover/movie?api_key=db97faa4d80f90ffe83589ef95873814&with_genres=18", options)
+            .then(moviesResponse => moviesResponse.json())
+            .then(movies => {
+              // Agora você tem a lista de filmes que correspondem aos gêneros
+              setMovies(movies.results);
+            });
+        });
+    }
+
+    fetchMoviesByGenres();
+  }, []);
+
+  return (
+    <div className="poster">
+      <h1>Drama:</h1>
+      <div className="movie-posters">
+        {movies.map(movie => (
+          <div key={movie.id} className="movie-poster">
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
-export default Drama
+
+export default Adventure;
