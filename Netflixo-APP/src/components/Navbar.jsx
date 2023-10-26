@@ -1,10 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import {BiSearchAlt2} from "react-icons/bi";
-import {BsFillFilePlayFill} from "react-icons/bs";
-import { AiOutlineMenu } from "react-icons/ai";
+import {FaPlayCircle, FaBars, FaPlay} from "react-icons/fa";
 import "./Navbar.css";
 import { useState, useRef } from "react";
-import { sidebar } from "./sidebar";
 
 function Navbar() {
   const dropDownRef = useRef(null);
@@ -22,9 +20,11 @@ function Navbar() {
   return (
       <>
     <nav id="navbar">
-        <button className="but"><AiOutlineMenu className="barras" onClick={onClick} /></button>
+        <button className="but">
+        <FaBars className="barras" onClick={onClick} />
+        </button>
         <h1>
-          <Link to="/"><BsFillFilePlayFill />NETFLIXO</Link>
+          <Link to="/"><FaPlayCircle />NETFLIXO</Link>
         </h1>
         <form onSubmit={handleSubmit}>
           <input type="text"
@@ -38,14 +38,14 @@ function Navbar() {
       </nav>
       <nav ref={dropDownRef} className={`menu ${isActive ? "active" : "inactive"}`}>
       <ul>
-        <li><a href="">Ação</a></li>
-        <li><a href="">Comédia</a></li>
-        <li><a href="">Terror</a></li>
-        <li><a href="">Aventura</a></li>
-        <li><a href="">Drama</a></li>
-        <li><a href="">Ficção</a></li>
+        <li><Link to="action"> <FaPlay/> Ação</Link></li>
+        <li><Link to="comedy"><FaPlay/> Comédia</Link></li>
+        <li><Link to="horror"><FaPlay/> Terror</Link></li>
+        <li><Link to="adventure"><FaPlay/> Aventura</Link></li>
+        <li><Link to="drama"><FaPlay/> Drama</Link></li>
+        <li><Link to="fiction"><FaPlay/> Ficção</Link></li>
       </ul>
-    </nav>
+  </nav>
       </>
   );
 }

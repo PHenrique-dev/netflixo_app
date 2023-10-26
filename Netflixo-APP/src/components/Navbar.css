@@ -7,13 +7,12 @@
 }
 #navbar h1{
     font-size: 3rem;
-    margin-left: 3%;
+    margin-left: 4%;
 }
 #navbar h1 a{
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
 }
 #navbar form{
     display: flex;
@@ -43,43 +42,43 @@
     color: #D7171E;
 }
 .barras{
-    font-size: 2rem;
-    margin-left: 55px;
     color: #D7171E;
+    font-size: 1.8rem;
+    margin-left: 50px;
 }
 .but{
     background-color: transparent;
 }
-.menu ul li a{
-    text-decoration: none;
-}
 .menu.inactive{
     position: absolute;
+    list-style: none;
 }
 .menu.active{
+    list-style: none;
+    width: 220px;
+    text-align: justify;
     opacity: 1;
     visibility: visible;
-    animation: showSidebar 1s;
+    transform: translateX(220px);
     position: absolute;
-    padding: 20px;
-    padding-left: 50px;
-    margin-left: 70px;
+    padding: 20px 50px 20px 50px;
     z-index: 1;
     background-color: #1212128a;
 }
-.menu.active li a{
-    width: 0px;
-    height: 0px;
-    font-size: 1.4rem;
-    text-decoration: none;
+.menu.active li{
+    list-style: none;
+    font-size: 1.5rem;
 }
 .menu.active li a:hover::after{
-    width: 60px;
+    list-style: none;
+    width: 100%;
     height: 0px;
-    padding: 0px;
-    border-bottom: 4px solid white;
+    padding: 1px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid white;
 }
 .menu.active li a::after{
+    list-style: none;
     content: '';
     width: 0px;
     height: 0px;
@@ -88,27 +87,31 @@
     transition: .9s;
 }
 .menu{
-    opacity: 0;
+    list-style: none;
+    position: absolute;
+    left: -220px;
+    max-width: 220px;
+    visibility: hidden;
+    overflow-y: overlay;
+    transition: 1s;
 }
-@keyframes showSidebar {
-    from {
-      opacity: 0;
-      top: 0;
-      width: 0;
-    }
-    to {
-      opacity: 1;
-      top: 100px;
-    }
-  }
 @media (max-width: 992px){
     #navbar h1{
-        margin-left: 30px;
+        margin-left: -12px;
+        margin-right: 6px;
     }
     #navbar input{
         padding: 8px;
         width: 100px;
         height: 30px;
         margin-top: 20px;
+    }
+    .barras{
+        margin-left: -15px;
+    }
+    .menu.active{
+        margin-left: 0px;
+        padding: 0;
+        width: 110px;
     }
 }
