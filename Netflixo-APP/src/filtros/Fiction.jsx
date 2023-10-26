@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Movies.css'
-
+import { AiFillStar } from 'react-icons/ai';
+import MovieCard from "../components/MovieCard";
 const Adventure = () => {
   const [movies, setMovies] = useState([]);
 
@@ -34,11 +35,15 @@ const Adventure = () => {
 
   return (
     <div className="poster">
-      <h1>Ficção:</h1>
+      <h1>Filmes de Ficção:</h1>
       <div className="movie-posters">
+      {movies.length > 0 &&
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
         {movies.map(movie => (
           <div key={movie.id} className="movie-poster">
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+            <h2>{movie.title}</h2>
+            <h3><AiFillStar/> {movie.vote_average}</h3>
           </div>
         ))}
       </div>
