@@ -1,28 +1,24 @@
-import { useState, useEffect } from "react";
-import MovieCard from "../components/MovieCard";
-import "../pages/MovieGrid.css"
-const action = import.meta.env.VITE_FILTRO
-import '../pages/MovieGrid.css';
+
 const Action = () =>{
     const [topMovies, setTopMovies] = useState([])
-    const getActionMovies = async (url) => {
+    const getTopRatedMovies = async (url) => {
         const res = await fetch(url)
         const data = await res.json()
         setTopMovies(data.results)
     };
     useEffect(() =>{
-        const actionUrl = `${action}?with_genres=28`
-        getActionMovies(actionUrl)
+        const topRatedURL = `${moviesURL}top_rated?${apiKey}`
+        getTopRatedMovies(topRatedURL)
     }, [])
     return(
         
         <div className="container">
-            <h2 className="title">AÇÃO:</h2>
+            <h2 className="title">Aventura:</h2>
             <div className="movies-container">
             {topMovies.length === 0 && <p>Carregando...</p>}
-            {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={with_genres}/>)}
+            {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie}/>)}
             </div>
         </div>
     )
 }
-export default Action
+export default Action;

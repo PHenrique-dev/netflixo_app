@@ -5,9 +5,6 @@ import "./Navbar.css";
 import { useState, useRef } from "react";
 
 function Navbar() {
-  const dropDownRef = useRef(null);
-  const [isActive, setIsActive] = useState(false)
-  const onClick = () => setIsActive(!isActive)
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const handleSubmit = (e) => {

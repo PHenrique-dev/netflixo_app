@@ -49,35 +49,59 @@
 .but{
     background-color: transparent;
 }
-.menu.inactive{
-    position: absolute;
-    list-style: none;
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
-.menu.active{
-    list-style: none;
-    width: 220px;
-    text-align: justify;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(220px);
+.sidebar{
     position: absolute;
-    padding: 20px 50px 20px 50px;
-    z-index: 1;
     background-color: #1212128a;
-}
-.menu.active li{
-    list-style: none;
-    font-size: 1.5rem;
-}
-.menu.active li a:hover::after{
-    list-style: none;
+    top: 96px;
+    left: -470px;
+    max-width: 220px;
     width: 100%;
+    overflow-y: overlay;
+    z-index: 4;
+    visibility: hidden;
+    transition: 1s;
+}
+.sidebar.active{
+    transform: translateX(475px);
+    visibility: visible;
+}
+.sidebar-inner{
+    display: grid;
+    gap: 20px;
+    padding-block: 36px;
+}
+.sidebar::-webkit-scrollbar-thumb{ background-color: transparent;}
+.sidebar:is(:hover, :focus-within)::-webkit-scrollbar-thumb{
+    background-color: #4242428a;
+}
+.sidebar::-webkit-scrollbar-button{ height: 16px;}
+.sidebar-list{
+    padding-inline: 36px;
+}
+.sidebar-link{
+    color: #D7171E;
+    transition: 1s;
+}
+.sidebar-link:is(:hover, :focus-visible) {color: #D7171E;}
+.sidebar-list{
+    display: grid;
+    gap: 8px;
+}
+.sidebar-list .title{ margin-block-end: 8px;}
+.sidebar.active:hover::after{
+    list-style: none;
+    width: 50%;
     height: 0px;
     padding: 1px;
     padding-bottom: 5px;
     border-bottom: 3px solid white;
 }
-.menu.active li a::after{
+.sidebar.active::after{
     list-style: none;
     content: '';
     width: 0px;
@@ -86,14 +110,20 @@
     border-bottom: 4px solid transparent;
     transition: .9s;
 }
-.menu{
-    list-style: none;
-    position: absolute;
-    left: -220px;
-    max-width: 220px;
-    visibility: hidden;
-    overflow-y: overlay;
+.overlay{
+    position: fixed;
+    top: 96px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
     transition: 1s;
+    z-index: 3;
+}
+.overlay.active{
+    opacity: 0.5;
+    pointer-events: all;
 }
 @media (max-width: 992px){
     #navbar h1{
@@ -109,7 +139,7 @@
     .barras{
         margin-left: -15px;
     }
-    .menu.active{
+    .sidebar.active{
         margin-left: 0px;
         padding: 0;
         width: 110px;
