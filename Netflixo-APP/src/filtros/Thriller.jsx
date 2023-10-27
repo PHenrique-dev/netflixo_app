@@ -3,7 +3,7 @@ import './Movies.css'
 import { AiFillStar } from 'react-icons/ai';
 import MovieCard from "../components/MovieCard";
 
-const Adventure = () => {
+const Thriller = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Adventure = () => {
         .then(genresResponse => {
           const genreIds = genresResponse.genres.map(genre => genre.id);
 
-          return fetch("https://api.themoviedb.org/3/discover/movie?api_key=db97faa4d80f90ffe83589ef95873814&with_genres=12", options)
+          return fetch("https://api.themoviedb.org/3/discover/movie?api_key=db97faa4d80f90ffe83589ef95873814&with_genres=53", options)
             .then(moviesResponse => moviesResponse.json())
             .then(movies => {
               // Agora você tem a lista de filmes que correspondem aos gêneros
@@ -36,7 +36,7 @@ const Adventure = () => {
 
   return (
     <div className="poster">
-      <h1>Filmes de Aventura:</h1>
+      <h1>Filmes de Suspense:</h1>
       <div className="movie-posters">
       {movies.length > 0 &&
           movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
@@ -45,4 +45,4 @@ const Adventure = () => {
   );
 }
 
-export default Adventure;
+export default Thriller;

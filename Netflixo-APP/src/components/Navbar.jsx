@@ -44,6 +44,19 @@ function Navbar() {
         <li><Link to="adventure"><FaPlay/> Aventura</Link></li>
         <li><Link to="drama"><FaPlay/> Drama</Link></li>
         <li><Link to="fiction"><FaPlay/> Ficção</Link></li>
+        <li><Link to="animation"><FaPlay/> Animação</Link></li>
+        <li><Link to="documentary"><FaPlay/> Documentário</Link></li>
+        <li><Link to="crime"><FaPlay/> Crime</Link></li>
+        <li><Link to="thriller"><FaPlay/> Suspense</Link></li>
+        <li><Link to="war"><FaPlay/> Guerra</Link></li>
+        <li><Link to="tv-movie"><FaPlay/> Tv Movie</Link></li>
+        <li><Link to="family"><FaPlay/> Familia</Link></li>
+        <li><Link to="fantasy"><FaPlay/> Fantasia</Link></li>
+        <li><Link to="history"><FaPlay/> História</Link></li>
+        <li><Link to="music"><FaPlay/> Musical</Link></li>
+        <li><Link to="mystery"><FaPlay/> Mistério</Link></li>
+        <li><Link to="romance"><FaPlay/> Romance</Link></li>
+        <li><Link to="western"><FaPlay/> Ocidental</Link></li>
       </ul>
   </nav>
       </>

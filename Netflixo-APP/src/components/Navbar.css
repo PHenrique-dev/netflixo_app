@@ -54,15 +54,30 @@
 }
 .menu.inactive{
     position: absolute;
+    max-height: 250px;
 }
 .menu.active{
+    z-index: 1;
     padding: 20px;
     width: 220px;
     opacity: 1;
     visibility: visible;
     transform: translateX(220px);
     position: absolute;
-    background-color: #1212128a;
+    background-color: #121212;
+    overflow-y: scroll; 
+    max-height: 250px;
+    scrollbar-width: thin; 
+    scrollbar-color: #D7171E #1212128a; 
+
+    ::-webkit-scrollbar-thumb {
+        background: #D7171E;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #1212128a;
+    }
 }
 .menu.active li{
     list-style: none;
@@ -110,6 +125,6 @@
     .menu.active{
         margin-left: 0px;
         padding: 0;
-        width: 110px;
+        width: 140px;
     }
 }
