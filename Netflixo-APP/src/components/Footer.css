@@ -12,4 +12,22 @@
 .footer ul{
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
+.center-ul {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0; 
+  }
+  
+  .center-ul li {
+    margin-right: 20px; 
+  }
+  
+  
+  
+  
+  
+  
