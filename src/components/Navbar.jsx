@@ -24,7 +24,7 @@ function Navbar() {
         <FaBars className="barras" onClick={onClick} />
         </button>
         <h1>
-          <Link to="/"><FaPlayCircle />NETFLIXO</Link>
+          <Link to="/"><FaPlayCircle className="logo"/>NETFLIXO</Link>
         </h1>
         <form onSubmit={handleSubmit}>
           <input type="text"
