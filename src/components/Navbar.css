@@ -141,4 +141,7 @@
     .logo{
         display: none;
     }
+    #navbar h1{
+        font-size: 2.1rem; 
+    }
 }
